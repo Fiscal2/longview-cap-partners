@@ -6,7 +6,7 @@
 }
 
 #containerBackground2 {
-    background-image: url("../../assets/detroitSkyline2.jpg");
+    background-image: linear-gradient(rgba(149, 148, 153, 0.6), rgba(60, 60, 63, 0.6)), url("../../assets/detroitSkyline2.jpg");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
