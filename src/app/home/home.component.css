@@ -5,6 +5,9 @@
     background-size: cover;
 }
 
-#containerColor{
-    background-color: grey;
+#containerBackground2{
+    background-image: url("../../assets/detroitSkyline2.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
