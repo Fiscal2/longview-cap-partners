@@ -1,11 +1,11 @@
 #containerBackground {
-    background-image: url("../../assets/detroitSkyline.jpg");
+    background: linear-gradient(rgba(11, 0, 72, 0.5), rgba(72, 92, 192, 0.5)), url("../../assets/detroitSkyline.jpg");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#containerBackground2{
+#containerBackground2 {
     background-image: url("../../assets/detroitSkyline2.jpg");
     background-position: top;
     background-repeat: no-repeat;
