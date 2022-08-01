@@ -1,9 +1,6 @@
-#containerBackground{
+#containerBackground {
+    background-image: url("../../assets/detroitSkyline.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-#text{
-    color: white;
 }
