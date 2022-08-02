@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -8,7 +9,7 @@ const routes: Routes = [
 { path: '', redirectTo: '/home', pathMatch: 'full' },
 { path: 'About Us', component: NavbarComponent  },
 { path: '', redirectTo: '/aboutus', pathMatch: 'full' },
-{ path: 'Contact', component: NavbarComponent },
+{ path: 'Contact', component: ContactComponent  },
 { path: '', redirectTo: '/contact', pathMatch: 'full' },
 ];
 
