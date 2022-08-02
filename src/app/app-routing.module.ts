@@ -7,10 +7,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 const routes: Routes = [
 { path: 'home', component: HomeComponent },
 { path: '', redirectTo: '/home', pathMatch: 'full' },
-{ path: 'About Us', component: NavbarComponent  },
-{ path: '', redirectTo: '/aboutus', pathMatch: 'full' },
+{ path: 'About Us', component: NavbarComponent },
+{ path: 'aboutus', pathMatch: 'full' },
 { path: 'Contact', component: ContactComponent  },
-{ path: '', redirectTo: '/contact', pathMatch: 'full' },
+{ path: 'contact', pathMatch: 'full' },
 ];
 
 @NgModule({
