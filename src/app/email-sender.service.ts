@@ -10,7 +10,7 @@ export class EmailSenderService {
   constructor(private http: HttpClient) { }
 
   public emailBuilder(emailDataToSend: any) {
-    const endpoint = "<ENDPOINT>";
+    const endpoint = "";
 
     const body = JSON.stringify({
       senderEmail: emailDataToSend.email,
@@ -19,25 +19,8 @@ export class EmailSenderService {
       senderMessage: emailDataToSend.message
     });
 
-    // const requestOptions = {
-    //   method: "POST",
-    //   body
-    // };
-
     return this.http.post<any>(endpoint, body)
       .pipe(catchError(this.handleError));
-
-    // fetch(endpoint, requestOptions)
-    //   .then((response) => {
-    //     if (!response.ok) throw new Error("Error in fetch");
-    //     return response.json();
-    //   })
-    //   .then((response) => {
-    //     console.log("Email sent successfully!");
-    //   })
-    //   .catch((error) => {
-    //     console.log(`An unkown error occured.${error}`);
-    //   });
   }
 
   private handleError(error: HttpErrorResponse) {
