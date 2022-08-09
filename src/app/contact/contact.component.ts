@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit {
   }
 
   SendEmail(formDataToEmail: any) {
-    this.emailSender.emailBuilder(formDataToEmail);
+    this.emailSender.emailBuilder(formDataToEmail).subscribe(email => console.log(email));
     console.log(formDataToEmail);
     // const form = document.querySelector("form") as HTMLFormElement;
     // form.onsubmit = () => {
