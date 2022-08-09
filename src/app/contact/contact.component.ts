@@ -12,4 +12,14 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  SendEmail() {
+    const form = document.querySelector("form") as HTMLInputElement | null;
+    form?.addEventListener("submit", (event) => {
+      // const { name, email, company, message } = event.target as HTMLInputElement;
+      event.preventDefault();
+      const emailTarget = event.target as HTMLInputElement;
+      console.log(event)
+      console.log(emailTarget.value)
+    });
+  }
 }
