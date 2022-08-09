@@ -7,14 +7,14 @@ export class EmailSenderService {
 
   constructor() { }
 
-  public emailBuilder(emailEvent: FormData) {
+  public emailBuilder(emailDataToSend: any) {
     const endpoint = "<ENDPOINT>";
 
     const body = JSON.stringify({
-      senderEmail: emailEvent.get('email'),
-      senderName: emailEvent.get('name'),
-      senderCompany: emailEvent.get('company'),
-      senderMessage: emailEvent.get('message')
+      senderEmail: emailDataToSend.email,
+      senderName: emailDataToSend.name,
+      senderCompany: emailDataToSend.company,
+      senderMessage: emailDataToSend.message
     });
 
     const requestOptions = {
@@ -28,11 +28,10 @@ export class EmailSenderService {
         return response.json();
       })
       .then((response) => {
-        return "Email sent successfully!";
+        console.log("Email sent successfully!");
       })
       .catch((error) => {
-
-        return "An unkown error occured.";
+        console.log(`An unkown error occured.${error}`);
       });
   }
 }
