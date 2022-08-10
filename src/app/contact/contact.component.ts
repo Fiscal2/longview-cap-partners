@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { EmailSenderService } from '../email-sender.service';
 
 @Component({
@@ -13,10 +14,9 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  SendEmail(formDataToEmail: any) {
-    this.emailSender.emailBuilder(formDataToEmail).subscribe((response) => {
+  SendEmail(formDataToEmail: NgForm) {
+    this.emailSender.emailBuilder(formDataToEmail.value).subscribe((response) => {
       const alertPlaceholder = document.getElementById('liveAlert');
-      const contactForm = document.getElementById('contactForm');
 
       const alert = (message: string, type: string) => {
         const wrapper = document.createElement('div')
@@ -34,6 +34,7 @@ export class ContactComponent implements OnInit {
       } else {
         alert('Error sending email, Try Again!', 'danger');
       }
+      formDataToEmail.resetForm();
     });
   }
 }
