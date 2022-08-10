@@ -19,7 +19,7 @@ export class EmailSenderService {
       senderMessage: emailDataToSend.message
     });
 
-    return this.http.post<any>(endpoint, body)
+    return this.http.post<any>(endpoint, body, { observe: 'response' })
       .pipe(catchError(this.handleError));
   }
 
