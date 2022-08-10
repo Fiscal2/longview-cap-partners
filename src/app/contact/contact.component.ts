@@ -14,34 +14,28 @@ export class ContactComponent implements OnInit {
   }
 
   SendEmail(formDataToEmail: any) {
-    this.emailSender.emailBuilder(formDataToEmail).subscribe(response => {
-
-
+    this.emailSender.emailBuilder(formDataToEmail).subscribe((response) => {
       const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-                        
+
       const alert = (message: any, type: any) => {
-          const wrapper = document.createElement('div')
-          wrapper.innerHTML = [
-            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-            `   <div>${message}</div>`,
-            '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-            '</div>'
-          ].join('')
-        
-          alertPlaceholder?.append(wrapper)
-        }
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+          `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+          `   <div>${message}</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          '</div>'
+        ].join('')
+        alertPlaceholder?.append(wrapper)
+      }
 
-        const alertTrigger = document.getElementById('liveAlertBtn')
-        if (response.status === 200) {
-          alertTrigger?.addEventListener('click', () => {
-          alert('Nice, you triggered this alert message!', 'success')
-      })
-    } else{
+      const alertTrigger = document.getElementById('liveAlertBtn')
       alertTrigger?.addEventListener('click', () => {
-        alert('Nice, you triggered this alert message!', 'danger')
-      })
-
-    }
+        if (response.status === 200) {
+          alert('Email successfully sent!', 'success');
+        } else {
+          alert('Error sending email, Try Again!', 'danger');
+        }
+      });
     });
   }
 }
