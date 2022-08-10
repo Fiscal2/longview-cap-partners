@@ -18,7 +18,7 @@ export class ContactComponent implements OnInit {
       const alertPlaceholder = document.getElementById('liveAlert');
       const contactForm = document.getElementById('contactForm');
 
-      const alert = (message: any, type: any) => {
+      const alert = (message: string, type: string) => {
         const wrapper = document.createElement('div')
         wrapper.innerHTML = [
           `<div class="alert alert-${type} alert-dismissible" role="alert">`,
@@ -29,14 +29,11 @@ export class ContactComponent implements OnInit {
         alertPlaceholder?.append(wrapper)
       }
 
-      const alertTrigger = document.getElementById('liveAlertBtn')
-      alertTrigger?.addEventListener('click', () => {
-        if (response.status === 200) {
-          alert('Email successfully sent!', 'success');
-        } else {
-          alert('Error sending email, Try Again!', 'danger');
-        }
-      });
+      if (response.status === 200) {
+        alert('Email successfully sent!', 'success');
+      } else {
+        alert('Error sending email, Try Again!', 'danger');
+      }
     });
   }
 }
