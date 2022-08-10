@@ -15,7 +15,8 @@ export class ContactComponent implements OnInit {
 
   SendEmail(formDataToEmail: any) {
     this.emailSender.emailBuilder(formDataToEmail).subscribe((response) => {
-      const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+      const alertPlaceholder = document.getElementById('liveAlert');
+      const contactForm = document.getElementById('contactForm');
 
       const alert = (message: any, type: any) => {
         const wrapper = document.createElement('div')
