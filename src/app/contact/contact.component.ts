@@ -50,6 +50,7 @@ export class ContactComponent implements OnInit {
       this.AlertBuilder('Email successfully sent!', 'success');
     } else {
       this.AlertBuilder('Error sending email, Try Again!', 'danger');
+      console.error(httpResponse);
     }
     form.resetForm();
     setTimeout(() => {
