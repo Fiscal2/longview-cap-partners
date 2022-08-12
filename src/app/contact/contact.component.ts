@@ -21,7 +21,7 @@ export class ContactComponent implements OnInit {
       const alert = (message: string, type: string) => {
         const wrapper = document.createElement('div')
         wrapper.innerHTML = [
-          `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+          `<div class="alert alert-${type} alert-dismissible fade show" role="alert">`,
           `   <div>${message}</div>`,
           '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
           '</div>'
@@ -35,6 +35,7 @@ export class ContactComponent implements OnInit {
         alert('Error sending email, Try Again!', 'danger');
       }
       formDataToEmail.resetForm();
+      console.log(formDataToEmail.onReset())
     });
   }
 }
