@@ -4,7 +4,7 @@
         <div class="card col-lg-3 shadow-sm bg-light bg-gradient mb-5 py-2" style="width: 50rem">
             <div class="card-body">
                 <div id="liveAlert"></div>
-                <form id="contactForm" #userEmail="ngForm" (ngSubmit)="SendEmail(userEmail)" novalidate>
+                <form id="contactForm" #userEmail="ngForm" (ngSubmit)="OnSubmit(userEmail)" novalidate>
                     <div class="mb-3">
                         <label for="name" class="form-label">Full Name</label>
                         <input type="text" class="form-control" name="name" placeholder="Jon Smith" minlength="3"
@@ -26,8 +26,11 @@
                             ngModel></textarea>
                     </div>
                     <div>
-                        <button id="liveAlertBtn" type="submit" class="btn btn-primary"
-                            [disabled]="!userEmail.form.valid">Submit</button>
+                        <button id="submitBtn" type="submit" class="btn btn-primary"
+                            [disabled]="!userEmail.form.valid"><span id="loadSpin"
+                                class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                            Submit
+                        </button>
                     </div>
                 </form>
             </div>
