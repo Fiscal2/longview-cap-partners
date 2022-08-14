@@ -8,7 +8,6 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { OurTeamComponent } from './our-team/our-team.component';
-import { OurStoryComponent } from './our-story/our-story.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,7 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
     ContactComponent,
     AboutusComponent,
     OurTeamComponent,
-    OurStoryComponent
   ],
   imports: [
     BrowserModule,
