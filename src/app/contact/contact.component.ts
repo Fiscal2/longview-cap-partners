@@ -15,7 +15,6 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   OnSubmit(emailForm: NgForm) {
     this.FormButton('on');
     this.SendEmail(emailForm);

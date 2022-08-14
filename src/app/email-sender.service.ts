@@ -14,6 +14,7 @@ export class EmailSenderService {
     const body = JSON.stringify({
       senderEmail: emailDataToSend.email,
       senderName: emailDataToSend.name,
+      senderPhone: emailDataToSend.phone,
       senderCompany: emailDataToSend.company,
       senderMessage: emailDataToSend.message
     });
