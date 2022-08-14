@@ -2,6 +2,5 @@
     background: linear-gradient(rgba(11, 0, 72, 0.5), rgba(72, 92, 192, 0.5)), url("../../assets/wallStreet.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-size: 100%;
+    background-size: cover;
 }
