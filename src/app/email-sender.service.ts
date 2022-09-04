@@ -9,7 +9,7 @@ export class EmailSenderService {
   constructor(private http: HttpClient) { }
 
   public emailBuilder(emailDataToSend: any) {
-    const endpoint = "";
+    const endpoint = "https://q2nkmha3o8.execute-api.us-east-2.amazonaws.com/default/contactForminator";
 
     const body = JSON.stringify({
       senderEmail: emailDataToSend.email,
